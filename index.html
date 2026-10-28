@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>kita balikan ya?</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}
+body{background:#FFF6F8;height:100vh;display:flex;justify-content:center;align-items:center;overflow:hidden}
+.box{text-align:center;width:100%;max-width:520px;padding:20px}
+h1{color:#E9447A;font-size:27px;font-weight:900}
+.btns{margin-top:22px;display:flex;justify-content:center;gap:20px;height:165px;position:relative}
+button{border:none;border-radius:18px;padding:14px 32px;font-weight:900;font-size:19px;cursor:pointer;transition:all .35s cubic-bezier(.34,1.56,.64,1)}
+#yes{background:#2ECC71;color:#fff;box-shadow:0 7px 0 #219150;z-index:50}
+#no{background:#FF4D4D;color:#fff;box-shadow:0 7px 0 #a82a2a;z-index:40}
+#final{display:none}
+.blue-bob{width:185px;margin:14px auto;animation:bob 1.3s infinite alternate}
+@keyframes bob{0%{transform:translateY(0)}100%{transform:translateY(-10px)}}
+.hug-wrap{width:360px;max-width:95vw;margin:8px auto;position:relative;height:220px;overflow:hidden}
+.hug-svg{width:100%;height:100%;animation:hugSqueeze 0.6s infinite alternate ease-in-out;transform-origin:center bottom;position:relative;z-index:2}
+@keyframes hugSqueeze{0%{transform:scaleX(0.96) scaleY(1.04) rotate(-1deg)}100%{transform:scaleX(1.06) scaleY(0.94) rotate(1.2deg) translateY(-7px)}}
+/* HUJAN LOPE MERAH KECIL DI BELAKANG */
+.love-rain{position:absolute;inset:0;z-index:1;pointer-events:none}
+.love-rain span{position:absolute;bottom:-20px;color:#FF2D68;font-size:14px;animation:naik 3s linear infinite;opacity:0}
+@keyframes naik{
+0%{transform:translateY(0) translateX(0) scale(0.5) rotate(0deg);opacity:0}
+10%{opacity:1}
+90%{opacity:0.8}
+100%{transform:translateY(-240px) translateX(20px) scale(1.2) rotate(20deg);opacity:0}
+}
+</style>
+</head>
+<body>
+<div class="box" id="main">
+<h1>mau ga kamu balikan lagi sama aku?</h1>
+<div class="btns"><button id="yes">Yes</button><button id="no">No</button></div>
+<div class="blue-bob">
+<svg viewBox="0 0 200 200"><ellipse cx="100" cy="172" rx="50" ry="12" fill="#000" opacity=".05"/><rect x="60" y="110" width="80" height="50" rx="28" fill="#7AC8FF"/><circle cx="100" cy="70" r="54" fill="#7AC8FF"/><ellipse cx="56" cy="30" rx="18" ry="24" fill="#7AC8FF"/><ellipse cx="144" cy="30" rx="18" ry="24" fill="#7AC8FF"/><circle cx="78" cy="72" r="8" fill="#111"/><circle cx="80" cy="69" r="2.5" fill="#fff"/><circle cx="122" cy="72" r="8" fill="#111"/><circle cx="124" cy="69" r="2.5" fill="#fff"/><ellipse cx="60" cy="90" rx="12" ry="7" fill="#FF8AA8" opacity=".7"/><ellipse cx="140" cy="90" rx="12" ry="7" fill="#FF8AA8" opacity=".7"/><path d="M 90 96 Q 100 104 110 96" stroke="#111" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>
+</div>
+<p id="hint" style="color:#aaa;font-size:12px">no nya kabur noh</p>
+</div>
+
+<div class="box" id="final">
+<h1>akhirnya balikan lagi</h1>
+<div class="hug-wrap">
+<!-- lope merah kecil banyak di belakang -->
+<div class="love-rain" id="loveRain"></div>
+<svg class="hug-svg" viewBox="0 0 360 200">
+<g><circle cx="132" cy="82" r="50" fill="#FFC2D1"/><ellipse cx="96" cy="38" rx="16" ry="22" fill="#FFC2D1"/><ellipse cx="164" cy="38" rx="16" ry="22" fill="#FFC2D1"/><rect x="90" y="115" width="84" height="48" rx="24" fill="#FFC2D1"/><path d="M 108 78 Q 116 68 124 78" stroke="#111" stroke-width="2.8" fill="none" stroke-linecap="round"/><path d="M 136 78 Q 144 68 152 78" stroke="#111" stroke-width="2.8" fill="none" stroke-linecap="round"/><ellipse cx="112" cy="92" rx="10" ry="6" fill="#FF5A8A" opacity=".8"/><ellipse cx="148" cy="92" rx="10" ry="6" fill="#FF5A8A" opacity=".8"/><path d="M 122 98 Q 130 104 138 98" stroke="#C83A5A" stroke-width="2" fill="none" stroke-linecap="round"/></g>
+<g><circle cx="228" cy="82" r="50" fill="#7AC8FF"/><ellipse cx="192" cy="38" rx="16" ry="22" fill="#7AC8FF"/><ellipse cx="260" cy="38" rx="16" ry="22" fill="#7AC8FF"/><rect x="186" y="115" width="84" height="48" rx="24" fill="#7AC8FF"/><path d="M 204 78 Q 212 68 220 78" stroke="#111" stroke-width="2.8" fill="none" stroke-linecap="round"/><path d="M 232 78 Q 240 68 248 78" stroke="#111" stroke-width="2.8" fill="none" stroke-linecap="round"/><ellipse cx="208" cy="92" rx="10" ry="6" fill="#FF5A8A" opacity=".8"/><ellipse cx="244" cy="92" rx="10" ry="6" fill="#FF5A8A" opacity=".8"/><path d="M 218 98 Q 228 104 236 98" stroke="#2A5A8A" stroke-width="2" fill="none" stroke-linecap="round"/></g>
+<path d="M 118 122 Q 180 155 242 122" stroke="#FFC2D1" stroke-width="30" stroke-linecap="round" fill="none"/>
+<path d="M 242 132 Q 180 165 118 132" stroke="#7AC8FF" stroke-width="30" stroke-linecap="round" fill="none"/>
+</svg>
+</div>
+<p style="color:#E9447A;font-weight:800;font-size:21px;margin-top:6px">makasih ya udah mau balikan sama aku lagi lovyuwww</p>
+</div>
+
+<script>
+const noBtn=document.getElementById('no'),yesBtn=document.getElementById('yes'),hint=document.getElementById('hint');
+let ys=1,ns=1,c=0;
+function kabur(){c++;ns=Math.max(0.1,1-c*0.18);ys+=0.58;noBtn.style.position='fixed';noBtn.style.left=Math.random()*(innerWidth-110)+'px';noBtn.style.top=Math.random()*(innerHeight-110)+'px';noBtn.style.transform='scale('+ns+')';noBtn.style.opacity=ns;yesBtn.style.transform='scale('+ys+')';if(ys>2.3){yesBtn.style.position='fixed';yesBtn.style.left='50%';yesBtn.style.top='50%';yesBtn.style.transform='translate(-50%,-50%) scale('+ys+')';yesBtn.style.fontSize=(18+ys*5)+'px'}if(ns<=0.18)noBtn.style.display='none'}
+noBtn.addEventListener('mouseenter',kabur);noBtn.addEventListener('touchstart',e=>{e.preventDefault();kabur()});noBtn.addEventListener('click',kabur);
+yesBtn.addEventListener('click',()=>{
+ document.getElementById('main').style.display='none';
+ document.getElementById('final').style.display='block';
+ document.body.style.background='#FFE8F0';
+ // bikin hujan lope
+ const rain=document.getElementById('loveRain');
+ for(let i=0;i<18;i++){
+  const s=document.createElement('span');
+  s.textContent='❤️';
+  s.style.left=Math.random()*100+'%';
+  s.style.animationDelay=(Math.random()*2)+'s';
+  s.style.fontSize=(10+Math.random()*14)+'px';
+  s.style.animationDuration=(2+Math.random()*2)+'s';
+  rain.appendChild(s);
+ }
+});
+
+</script>
+</body>
+</html>
